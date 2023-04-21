@@ -5,7 +5,7 @@ import 'package:intl/intl.dart';
 
 class Chart extends StatelessWidget {
   final List<Transactions> recentTransaction;
-  Chart(this.recentTransaction, {Key? key}) : super(key: key);
+  const Chart(this.recentTransaction, {Key? key}) : super(key: key);
 
   List<Map<String, Object>> get groupedTransactions {
     return List.generate(7, (index) {
@@ -18,7 +18,7 @@ class Chart extends StatelessWidget {
         bool sameMonth = recentTransaction[i].date.month == weekDay.month;
         bool sameYear = recentTransaction[i].date.year == weekDay.year;
 
-        if (sameDay && sameMonth && sameMonth) {
+        if (sameDay && sameMonth && sameYear) {
           totalSum += recentTransaction[i].value;
         }
       }
@@ -29,19 +29,32 @@ class Chart extends StatelessWidget {
     });
   }
 
+  double get _weekTotal {
+    return groupedTransactions.fold(0.0, (sum, tr) {
+      return sum + (tr['value'] as double);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Card(
       margin: const EdgeInsets.all(20),
       elevation: 6,
-      child: Row(
-        children: groupedTransactions.map((tr) {
-          return ChartBar(
-            label: tr['day'] as String,
-            value: tr['value'] as double,
-            percentage: 0.3,
-          );
-        }).toList(),
+      child: Padding(
+        padding: const EdgeInsets.all(10),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: groupedTransactions.map((tr) {
+            return Flexible(
+              fit: FlexFit.tight,
+              child: ChartBar(
+                label: tr['day'] as String,
+                value: tr['value'] as double,
+                percentage: (tr['value'] as double) / _weekTotal,
+              ),
+            );
+          }).toList(),
+        ),
       ),
     );
   }

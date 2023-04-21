@@ -36,56 +36,41 @@ class TransactionList extends StatelessWidget {
                 itemBuilder: (ctx, index) {
                   final tr = transactions[index];
                   return Card(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Container(
-                          padding: const EdgeInsets.all(10),
-                          margin: const EdgeInsets.symmetric(
-                            horizontal: 5,
-                            vertical: 10,
-                          ),
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Theme.of(context).colorScheme.primary,
-                              width: 5,
-                            ),
-                            // color: Colors.purple,
-                            // shape: BoxShape.circle,
-                          ),
-                          child: Text(
-                            'R\$ ${tr.value.toStringAsFixed(2)}',
-                            style: TextStyle(
-                              color: Theme.of(context).colorScheme.primary,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
+                    elevation: 5,
+                    margin: const EdgeInsets.symmetric(
+                      vertical: 8.0,
+                      horizontal: 5.0,
+                    ),
+                    child: ListTile(
+                        leading: CircleAvatar(
+                          radius: 30,
+                          backgroundColor:
+                              Theme.of(context).colorScheme.primary,
+                          child: Padding(
+                            padding: const EdgeInsets.all(5.0),
+                            child: FittedBox(
+                              child: Text(
+                                'R\$${tr.value}',
+                                style: const TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white),
+                              ),
                             ),
                           ),
                         ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              tr.title,
-                              style: GoogleFonts.quicksand(
-                                  color: Colors.black87,
-                                  fontWeight: FontWeight.w700,
-                                  fontSize: 16),
-                            ),
-                            Text(
-                              DateFormat('d MMM y').format(tr.date),
-                              style: TextStyle(color: Colors.grey[600]),
-                            )
-                          ],
+                        title: Text(
+                          tr.title,
+                          style: Theme.of(context).textTheme.bodyLarge,
                         ),
-                        IconButton(
+                        subtitle: Text(
+                          DateFormat('d MMM y').format(tr.date),
+                        ),
+                        trailing: IconButton(
                             onPressed: () {},
                             icon: const Icon(
                               Icons.delete,
-                              color: Colors.redAccent,
-                            ))
-                      ],
-                    ),
+                              color: Colors.red,
+                            ))),
                   );
                 }),
       ),

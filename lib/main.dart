@@ -1,12 +1,10 @@
 import 'package:expenses/components/Transaction_form.dart';
 import 'package:expenses/components/Transaction_list.dart';
-import 'package:expenses/components/chart.dart';
 import 'package:expenses/models/transaction.dart';
-import 'package:flutter/material.dart';
-
-import 'dart:math';
-
 import 'package:google_fonts/google_fonts.dart';
+import 'package:expenses/components/chart.dart';
+import 'package:flutter/material.dart';
+import 'dart:math';
 
 void main() {
   runApp(const ExpensesApp());
@@ -45,21 +43,21 @@ class _MyHomePageState extends State<MyHomePage> {
   final List<Transactions> _transaction = [
     Transactions(
       id: 't0',
-      title: 'Conta #01',
-      value: 400,
-      date: DateTime.now().subtract(Duration(days: 33)),
+      title: 'Conta Antiga',
+      value: 400.00,
+      date: DateTime.now().subtract(const Duration(days: 33)),
     ),
     Transactions(
       id: 't1',
-      title: 'Novo Tênis de corrida',
-      value: 300.10,
-      date: DateTime.now(),
+      title: 'Novo Tênis de Corrida',
+      value: 310,
+      date: DateTime.now().subtract(const Duration(days: 3)),
     ),
     Transactions(
       id: 't2',
-      title: 'Conta de Internet',
+      title: 'Conta de Luz',
       value: 211.30,
-      date: DateTime.now(),
+      date: DateTime.now().subtract(const Duration(days: 4)),
     ),
   ];
   List<Transactions> get _recentTransactions {
