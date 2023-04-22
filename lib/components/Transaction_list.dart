@@ -13,7 +13,7 @@ class TransactionList extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: SizedBox(
-        height: 400,
+        height: 610,
         child: transactions.isEmpty
             ? Center(
                 child: Column(
