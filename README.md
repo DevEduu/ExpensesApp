@@ -1,16 +1,28 @@
-# expenses
+# 📊 ExpensesApp
 
-A new Flutter project.
+Este é um projeto desenvolvido durante a aula prática do curso "Aprenda Flutter e Desenvolva Apps Para Android e IOS" da Cod3r, na sessão 4: Desenvolvendo Aplicativo Real - Despesas Pessoais.
 
-## Getting Started
+## 💡 Sobre o Projeto
 
-This project is a starting point for a Flutter application.
+O ExpensesApp é um aplicativo de controle de despesas pessoais, onde o usuário pode registrar todas as suas despesas e visualizá-las em diferentes categorias. O aplicativo permite que o usuário adicione novas despesas, exclua despesas existentes e visualize um gráfico com o resumo das suas despesas.
 
-A few resources to get you started if this is your first Flutter project:
+O objetivo deste projeto é fornecer uma aplicação completa e funcional desenvolvida com a linguagem de programação Flutter, que é uma tecnologia cada vez mais utilizada no mercado de desenvolvimento de aplicativos móveis.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 🚀 Tecnologias Utilizadas
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Flutter
+- Dart
+
+## 💻 Executando o Projeto
+
+Para executar o projeto, siga as instruções abaixo:
+
+1. Clone este repositório
+2. Abra o terminal na pasta do projeto
+3. Execute o comando `flutter pub get` para instalar as dependências
+4. Conecte um dispositivo físico ou emulador Android/iOS
+5. Execute o comando `flutter run` para rodar o aplicativo
+
+## 📝 Observações
+
+Este projeto é apenas para fins de estudo e desenvolvimento. O aplicativo pode conter bugs e não deve ser utilizado em ambiente de produção.
