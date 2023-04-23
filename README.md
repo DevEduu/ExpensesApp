@@ -7,6 +7,8 @@ Este é um projeto desenvolvido durante a aula prática do curso "Aprenda Flutte
 O ExpensesApp é um aplicativo de controle de despesas pessoais, onde o usuário pode registrar todas as suas despesas e visualizá-las em diferentes categorias. O aplicativo permite que o usuário adicione novas despesas, exclua despesas existentes e visualize um gráfico com o resumo das suas despesas.
 
 O objetivo deste projeto é fornecer uma aplicação completa e funcional desenvolvida com a linguagem de programação Flutter, que é uma tecnologia cada vez mais utilizada no mercado de desenvolvimento de aplicativos móveis.
+## 🎬 Tela do projeto
+<img src="./redme-img/screem.gif" width="200">
 
 ## 🚀 Tecnologias Utilizadas
 
@@ -14,6 +16,7 @@ O objetivo deste projeto é fornecer uma aplicação completa e funcional desenv
 - Dart
 
 ## 💻 Executando o Projeto
+
 
 Para executar o projeto, siga as instruções abaixo:
 
