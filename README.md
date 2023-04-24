@@ -1,3 +1,5 @@
+<img src="./redme-img/GITHUB-BANNER.png" align="center" width="850">
+
 # 📊 ExpensesApp
 
 Este é um projeto desenvolvido durante a aula prática do curso "Aprenda Flutter e Desenvolva Apps Para Android e IOS" da Cod3r, na sessão 4: Desenvolvendo Aplicativo Real - Despesas Pessoais.
