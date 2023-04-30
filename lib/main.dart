@@ -41,6 +41,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final List<Transactions> _transaction = [];
+  bool _showChart = false;
   List<Transactions> get _recentTransactions {
     return _transaction.where((tr) {
       return tr.date.isAfter(DateTime.now().subtract(
@@ -103,14 +104,23 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            SizedBox(
-              height: availableHeight * 0.25,
-              child: Chart(_recentTransactions),
-            ),
-            SizedBox(
-              height: availableHeight * 0.75,
-              child: TransactionList(_transaction, _deleteTransaction),
-            ),
+            Switch(
+                value: _showChart,
+                onChanged: (value) {
+                  setState(() {
+                    _showChart = value;
+                  });
+                }),
+            if (_showChart)
+              SizedBox(
+                height: availableHeight * 0.25,
+                child: Chart(_recentTransactions),
+              ),
+            if (!_showChart)
+              SizedBox(
+                height: availableHeight * 0.75,
+                child: TransactionList(_transaction, _deleteTransaction),
+              ),
           ],
         ),
       ),
