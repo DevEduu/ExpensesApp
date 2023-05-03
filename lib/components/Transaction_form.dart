@@ -54,6 +54,7 @@ class _TransactionFormState extends State<TransactionForm> {
               ),
             ),
             TextField(
+              maxLength: 2,
               onSubmitted: (_) => _submitForm(),
               keyboardType:
                   const TextInputType.numberWithOptions(decimal: true),

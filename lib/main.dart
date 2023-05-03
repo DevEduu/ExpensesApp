@@ -118,13 +118,15 @@ class _MyHomePageState extends State<MyHomePage> {
             if (_showChart || !_islandscape)
               SizedBox(
                 height: _islandscape
-                    ? availableHeight * 0.60
+                    ? availableHeight * 0.70
                     : availableHeight * 0.25,
                 child: Chart(_recentTransactions),
               ),
             if (!_showChart || !_islandscape)
               SizedBox(
-                height: availableHeight * 0.75,
+                height: _islandscape
+                    ? availableHeight * 0.99
+                    : availableHeight * 0.75,
                 child: TransactionList(_transaction, _deleteTransaction),
               ),
           ],
