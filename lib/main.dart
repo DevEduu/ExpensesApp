@@ -4,6 +4,7 @@ import 'package:expenses/models/transaction.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:expenses/components/chart.dart';
 import 'package:flutter/material.dart';
+import 'dart:io' show Platform;
 import 'dart:math';
 
 void main() {
@@ -132,10 +133,12 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => _openTransactionFormModal(context),
-        child: const Icon(Icons.add),
-      ),
+      floatingActionButton: Platform.isIOS
+          ? Container()
+          : FloatingActionButton(
+              onPressed: () => _openTransactionFormModal(context),
+              child: const Icon(Icons.add),
+            ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
