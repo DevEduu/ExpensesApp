@@ -43,35 +43,48 @@ class TransactionList extends StatelessWidget {
                         horizontal: 5.0,
                       ),
                       child: ListTile(
-                          leading: CircleAvatar(
-                            radius: 30,
-                            backgroundColor:
-                                Theme.of(context).colorScheme.primary,
-                            child: Padding(
-                              padding: const EdgeInsets.all(5.0),
-                              child: FittedBox(
-                                child: Text(
-                                  'R\$${tr.value}',
-                                  style: const TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.white),
-                                ),
+                        leading: CircleAvatar(
+                          radius: 30,
+                          backgroundColor:
+                              Theme.of(context).colorScheme.primary,
+                          child: Padding(
+                            padding: const EdgeInsets.all(5.0),
+                            child: FittedBox(
+                              child: Text(
+                                'R\$${tr.value}',
+                                style: const TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white),
                               ),
                             ),
                           ),
-                          title: Text(
-                            tr.title,
-                            style: Theme.of(context).textTheme.bodyLarge,
-                          ),
-                          subtitle: Text(
-                            DateFormat('d MMM y').format(tr.date),
-                          ),
-                          trailing: IconButton(
-                              onPressed: () => onRemove(tr.id),
-                              icon: const Icon(
-                                Icons.delete,
-                                color: Colors.red,
-                              ))),
+                        ),
+                        title: Text(
+                          tr.title,
+                          style: Theme.of(context).textTheme.bodyLarge,
+                        ),
+                        subtitle: Text(
+                          DateFormat('d MMM y').format(tr.date),
+                        ),
+                        trailing: MediaQuery.of(context).size.width > 480
+                            ? TextButton.icon(
+                                onPressed: () => onRemove(tr.id),
+                                icon: const Icon(
+                                  Icons.delete,
+                                  color: Colors.red,
+                                ),
+                                label: const Text(
+                                  'Excluir',
+                                  style: TextStyle(color: Colors.red),
+                                ))
+                            : IconButton(
+                                onPressed: () => onRemove(tr.id),
+                                icon: const Icon(
+                                  Icons.delete,
+                                  color: Colors.red,
+                                ),
+                              ),
+                      ),
                     );
                   }),
         );
